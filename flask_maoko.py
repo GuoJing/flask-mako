@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    flask.ext.mako
+    flask.ext.maoko
     ~~~~~~~~~~~~~~~~~~~~~~~
 
     Extension implementing Mako Templates support in Flask with support for
@@ -9,9 +9,9 @@
     :copyright: (c) 2012 by Béranger Enselme <benselme@gmail.com>
     :license: BSD, see LICENSE for more details.
 """
-import os, sys
+import os
+import sys
 
-from flask.helpers import locked_cached_property
 from flask.signals import template_rendered
 
 # Find the context stack so we can resolve which application is calling this
@@ -26,15 +26,15 @@ from werkzeug.debug.tbtools import Traceback, Frame, Line
 
 from mako.lookup import TemplateLookup
 from mako.template import Template
-from mako import exceptions
 from mako.exceptions import RichTraceback, text_error_template
 
 
 itervalues = getattr(dict, 'itervalues', dict.values)
 
-_BABEL_IMPORTS =  'from flask.ext.babel import gettext as _, ngettext, ' \
-                  'pgettext, npgettext'
-_FLASK_IMPORTS =  'from flask.helpers import url_for, get_flashed_messages'
+_BABEL_IMPORTS = 'from flask.ext.babel import gettext as _, ngettext, ' \
+                 'pgettext, npgettext'
+_FLASK_IMPORTS = 'from flask.helpers import url_for, get_flashed_messages'
+
 
 class MakoFrame(Frame):
     """ A special `~werkzeug.debug.tbtools.Frame` object for Mako sources. """
@@ -96,7 +96,6 @@ class TemplateError(RichTraceback, RuntimeError):
 
         return translated
 
-
     def __init__(self, template):
         super(TemplateError, self).__init__()
         self.einfo = sys.exc_info()
@@ -119,7 +118,6 @@ class MakoTemplates(object):
         if app is not None:
             self.init_app(app)
         self.app = app
-
 
     def init_app(self, app):
         """

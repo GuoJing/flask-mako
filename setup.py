@@ -7,20 +7,23 @@ allows developers to use  `Mako Templates
 <http://http://www.makotemplates.org/>`_ instead of the default Jinja2
 templating engine.
 
+And this is a fork of https://github.com/benselme/flask-mako
+because looks like no one is maintain this project.
+
 """
 import sys
 from setuptools import setup
 
 setup(
-    name='Flask-Mako',
-    version='0.3',
-    url='https://github.com/benselme/flask-mako',
+    name='Flask-Maoko',
+    version='0.1',
+    url='https://github.com/GuoJing/flask-maoko',
     license='BSD',
-    author='Beranger Enselme, Frank Murphy',
-    author_email='benselme@gmail.com',
+    author='Beranger Enselme, Frank Murphy, GuoJing',
+    author_email='soundbbg@gmail.com',
     description='Mako templating support for Flask applications.',
     long_description=__doc__,
-    py_modules=['flask_mako'],
+    py_modules=['flask_maoko'],
     zip_safe=False,
     platforms='any',
     install_requires=[
@@ -41,4 +44,3 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
-

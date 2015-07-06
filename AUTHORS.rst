@@ -8,3 +8,10 @@ Other contributors:
 - sqrabs
 - cpher
 - lmntality
+
+flask-maoko is based on flask-mako, and support cache and other mako feature.
+
+contributors:
+```````````````````
+
+- GuoJing
